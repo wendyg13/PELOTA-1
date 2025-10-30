@@ -8,29 +8,48 @@ let vely;
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
-    diam = random (50, 300);
-    rad = diam/2;
+    diam = random(50, 300);
+    rad = diam / 2;
 
     posx = random(rad, width - rad);
-    posy =random(rad, height - rad);
+    posy = random(rad, height - rad);
 
-    velx = random (-5,5);   
-    vely = random (-5,5);
+    velx = random (-5, 5);   
+    vely = random (-5, 5);
 }
 
 function draw(){
     background(150);
-    pox += velx;
+    posx += velx;
     posy += vely;
 
     circle(posx, posy, diam);
 
-    if(posx > width - rad || velx < rad){
+    if(posx > width - rad || posx < rad){
         velx *= -1;
     }
 
-    if(posy > height - rad || vely < rad){
+    if(posy > height - rad || posy < rad){
         vely *= -1;
     }
+
+    
+/**
+ * funcion actualizar
+ * 
+ * Actualiza la posición de la bola y verifica colisiones con los bordes
+ */
+
+
+function actualizar () {AbortController
+    if (posx > width - rad || posx < rad){
+        velx *= -1;
+    }
+
+    if (posy > height - rad || posy < rad){
+        vely *= -1;
+    }
+
+}
 
 }
