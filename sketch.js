@@ -1,53 +1,22 @@
-let posx;
-let posy;
-let diam;
-let rad;
-let velx;
-let vely;
-
+let nuevaPelota, otraPelota, otraMas;
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
-    diam = random(50, 300);
-    rad = diam / 2;
-
-    posx = random(rad, width - rad);
-    posy = random(rad, height - rad);
-
-    velx = random (-5, 5);   
-    vely = random (-5, 5);
-
     rectMode(CENTER);
+    nuevaPelota = new Pelota();
+    otraPelota = new Pelota();
+    otraMas = new Pelota();
 }
 
 function draw(){
     background(150);
+    nuevaPelota.actualizar();
+    nuevaPelota.visualizar();
 
-    actualizar();
-    visualizar();
+    otraPelota.actualizar();
+    otraPelota.visualizar();
+    
+    otraMas.actualizar();
+    otraMas.visualizar();
 } 
 
-function actualizar (){
-    if(posx > width - rad || posx < rad){
-        velx *= -1;
-    }
-
-    if(posy > height - rad || posy < rad){
-        vely *= -1;
-    }
-
-    posx += velx;
-    posy += vely;
-
-}
-
-function visualizar(){
-    fill(100, 0, 105);
-    stroke(100,0,100);
-    strokeWeight(10);
-    
-    circle( posx, posy, diam);
-
-    noFill();
-    ellipse(posx, posy, diam/2, diam*2);
-}
