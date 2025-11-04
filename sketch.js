@@ -1,22 +1,22 @@
-let nuevaPelota, otraPelota, otraMas;
+const NP = 100; 
+let pelotas = [];
+
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
     rectMode(CENTER);
-    nuevaPelota = new Pelota();
-    otraPelota = new Pelota();
-    otraMas = new Pelota();
+    for(let i = 0; i < NP; i++){
+        pelotas[i] = new Pelota();
+    }
+
+    console.log(pelotas);
 }
 
 function draw(){
     background(150);
-    nuevaPelota.actualizar();
-    nuevaPelota.visualizar();
-
-    otraPelota.actualizar();
-    otraPelota.visualizar();
-    
-    otraMas.actualizar();
-    otraMas.visualizar();
-} 
+    for(let i = 0; i < NP; i++){
+        pelotas[i].actualizar();
+        pelotas[i].visualizar();
+    }
+}
 

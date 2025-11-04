@@ -2,7 +2,7 @@ class Pelota{
 
     constructor(){
   
-        this.diam = random(50, 300);
+        this.diam = random(10, 150);
         this.rad = this.diam / 2;
 
         this.posx = random(this.rad, width - this.rad);
@@ -11,7 +11,7 @@ class Pelota{
         this.velx = random (-5, 5);   
         this.vely = random (-5, 5);
         
-        this.c = color(random(180,270), random(50, 90), random(245, 300));
+        this.nuevocolor = color(random(180,270), random(50, 90), random(245, 300), 100);
     }
 
     actualizar(){
@@ -31,7 +31,7 @@ class Pelota{
 
     visualizar(){
 
-    fill(this.c);
+    fill(this.nuevocolor);
     stroke(120,59,100);
     strokeWeight(5);
     circle(this.posx, this.posy, this.diam);
