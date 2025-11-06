@@ -20,33 +20,33 @@ class Pelota{
 
     actualizar(){
         
-            if(this.posx > width - this.rad || this.posx < this.rad){
+        if(this.posx > width - this.rad || this.posx < this.rad){
             this.velx *= -1;
             }
 
-            if(this.posy > height - this.rad || this.posy < this.rad){
+        if(this.posy > height - this.rad || this.posy < this.rad){
             this.vely *= -1;
             }
 
-            this.posx += this.velx;
-            this.posy += this.vely;
+        this.posx += this.velx;
+        this.posy += this.vely;
 
     }   
 
     visualizar(){
-    fill(this.nuevocolor);
-    stroke(20,59,100, 35);
-    strokeWeight(6);
-    circle(this.posx, this.posy, this.diam);
+        fill(this.nuevocolor);
+        stroke(20,59,100, 35);
+        strokeWeight(6);
+        circle(this.posx, this.posy, this.diam);
 
-    fill(this.nuevocolorCirculo);
-    stroke(20,59,100);
-    noStroke();
-    circle(this.posx, this.posy, this.diam / 1.5);
+        fill(this.nuevocolorCirculo);
+        stroke(20,59,100);
+        noStroke();
+        circle(this.posx, this.posy, this.diam / 1.5);
 
-    fill(this.nuevocolorCirculito);
-    noStroke();
-    circle(this.posx, this.posy, this.diam / 3);
+        fill(this.nuevocolorCirculito);
+        noStroke();
+        circle(this.posx, this.posy, this.diam / 3);
     }
 
 }

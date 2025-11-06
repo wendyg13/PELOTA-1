@@ -13,7 +13,7 @@ function setup(){
 }
 
 function draw(){
-    background(150);
+    background(100, 50, 200);
     for(let i = 0; i < NP; i++){
         pelotas[i].actualizar();
         pelotas[i].visualizar();
